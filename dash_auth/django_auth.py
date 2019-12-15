@@ -18,7 +18,7 @@ class DjangoAuth(Auth):
 
         response = requests.post(
             self._endpoint_url,
-            HTTP_AUTHORIZATION=auth_header,
+            headers={'Authorization': auth_header},
             timeout=10
         )
         return response.status_code == 200
